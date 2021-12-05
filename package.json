@@ -21,6 +21,9 @@
     "url": "https://github.com/mjvandermeulen/codingawesomeness/issues"
   },
   "homepage": "https://github.com/mjvandermeulen/codingawesomeness#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
   "devDependencies": {
     "eslint": "^7.5.0",
     "eslint-config-standard": "^14.1.1",
