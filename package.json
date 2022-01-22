@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/mjvandermeulen/codingawesomeness#readme",
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^3.1.1"
   },
   "devDependencies": {
     "eslint": "^7.5.0",
