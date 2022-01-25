@@ -1,6 +1,6 @@
 /**
  * If you want to run this locally (recommended): *
- * - cd to the correct parent directory.
+ * - cd to the a directory that you want to be the parent of this project.
  * - $ git clone git@github.com:mjvandermeulen/codingawesomeness.git
  * - $ npm install
  * - $ node using-promises.js
@@ -15,19 +15,19 @@
  *     NUMBER 3 etc in the correct order.
  *
  * EXERCISE 2:
- * - uncomment the 'bogus' loadsite line, which is called after the google line
+ * - uncomment the 'doesnotexist.com' loadsite line, which is called after the google line
  *     and notice what happens. (quite enjoyable, if I may say so myself)
  *
  */
 
-const fetch = require("node-fetch");
+import { promisePretendLoad } from "./library.js";
 
 function loadSite(site) {
   console.log("NUMBER 0");
-  fetch(site)
+  promisePretendLoad(site)
     .then(function () {
       console.log("NUMBER 0");
-      //   console.log(`${site} loaded`)
+      console.log(`${site} loaded`);
     })
     .catch(function (_) {
       console.log("NUMBER 0");
@@ -38,5 +38,5 @@ function loadSite(site) {
 
 console.log("NUMBER 0");
 loadSite("http://google.com");
-// loadSite('bogus')
+// loadSite('doesnotexist.com')
 console.log("NUMBER 0");
