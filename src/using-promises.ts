@@ -22,7 +22,7 @@
 
 import { promisePretendLoad } from "./library.js";
 
-function loadSite(site) {
+function loadSite(site: string) {
   console.log("NUMBER 0");
   promisePretendLoad(site)
     .then(function (result) {

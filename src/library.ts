@@ -1,4 +1,4 @@
-export const promisePretendLoad = (site) => {
+export const promisePretendLoad = (site: string) => {
   // pretends to load a site. Clever!
   // returns a promise
   return new Promise((resolve, reject) => {
@@ -22,7 +22,7 @@ export const promisePretendLoad = (site) => {
   });
 };
 
-export const promisePretendLanguageCheck = (text) => {
+export const promisePretendLanguageCheck = (text: string) => {
   return new Promise((resolve, reject) => {
     console.log("Promise A");
     setTimeout(() => {
@@ -44,7 +44,11 @@ export const promisePretendLanguageCheck = (text) => {
   });
 };
 
-export function callbacksPretendLoad(site, handleSucces, handleError) {
+export function callbacksPretendLoad(
+  site: string,
+  handleSucces: (content: string) => void,
+  handleError: (content: string) => void
+) {
   // pretends to load a site
   // takes handlers of success and fail as 2nd and 3rd arguments
   setTimeout(function () {
@@ -57,11 +61,11 @@ export function callbacksPretendLoad(site, handleSucces, handleError) {
   });
 }
 
-const randomWord = (list) => {
+const randomWord = (list: string[]) => {
   return list[Math.floor(Math.random() * list.length)];
 };
 
-export const randomWords = (numberOfWords, languageChance = 0) => {
+export const randomWords = (numberOfWords: number, languageChance = 0) => {
   const languagePerPickChance =
     1 - Math.pow(1 - languageChance, 1 / numberOfWords);
   let words = "";
@@ -75,7 +79,7 @@ export const randomWords = (numberOfWords, languageChance = 0) => {
   return words.trim();
 };
 
-export const hasBadWords = (text) => {
+export const hasBadWords = (text: string): number => {
   const badList = badWords.split(" ");
   return badList.some((word) => {
     const regex = new RegExp(word, "i");

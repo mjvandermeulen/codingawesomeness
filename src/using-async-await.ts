@@ -22,7 +22,7 @@
 
 import { promisePretendLoad } from "./library.js";
 
-const loadSite = async (site) => {
+const loadSite = async (site: string) => {
   // ****** KINDA LEFT OFF HERE:
   // This is informative, but not practical:
   // usually you would return the content OR an error, not the status

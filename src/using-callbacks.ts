@@ -2,7 +2,7 @@ import { callbacksPretendLoad } from "./library.js";
 
 console.log("NUMBER 1");
 
-function loadSite(site) {
+function loadSite(site: string) {
   console.log("NUMBER 3");
   callbacksPretendLoad(
     site,

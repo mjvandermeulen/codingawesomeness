@@ -1,4 +1,4 @@
-const log_sort = (numberList) => {
+const log_sort = (numberList: number[]) => {
   console.log(`\nArray: ${numberList}`);
   const sortFun = difference();
   numberList.sort(sortFun);
@@ -7,12 +7,13 @@ const log_sort = (numberList) => {
 const difference = () => {
   let counter = 0;
 
-  const diffAndPrintCount = (a, b) => {
+  const diffAndPrintCount = (a: number, b: number): number => {
     counter++;
     console.log(counter);
     return a - b;
   };
 
+  // closure
   return diffAndPrintCount;
 };
 
