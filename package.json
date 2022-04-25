@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Coding School of Awesomeness Playground",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +25,7 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.26",
     "eslint": "^7.5.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",

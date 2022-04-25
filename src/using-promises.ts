@@ -3,7 +3,7 @@
  * - cd to the a directory that you want to be the parent of this project.
  * - $ git clone git@github.com:mjvandermeulen/codingawesomeness.git
  * - $ npm install
- * - $ node using-promises.js
+ * - $ see README.md how to run this
  *
  * EXERCISE 1:
  *
@@ -20,25 +20,32 @@
  *
  */
 
-import { promisePretendLoad } from "./library.js";
+import { promisePretendLanguageCheck, promisePretendLoad } from "./promises";
 
 function loadSite(site: string) {
   console.log("NUMBER 0");
   promisePretendLoad(site)
     .then(function (result) {
       console.log("NUMBER 0");
-      // NOTE:
-      // this "dumb" non Promise return is automatically wrapped by js
-      //   to return a promise
-      return `${site} loaded\n  result: "${result}"`;
+      return `${site} loaded with\n  "${result}"`;
     })
-    // this is dumb: since only promisePretendLoad is async.
-    // think of a second async function, that pretends to send your results to a site called "check for bad words"
-    .then(function (message) {
-      console.log(message);
+    .then(function (result) {
+      console.log(result);
+      return result;
+    })
+    .then(function (result) {
+      return promisePretendLanguageCheck(result);
+    })
+    .then(function (result: [string, number]) {
+      const [text, changes] = result;
+      return `${site} cleaned load result\n  ${text}\n  ${changes} bad word${changes > 1 ? "s were" : " was"} found`;
+    })
+    .then(function (result) {
+      console.log(result);
     })
     .then(function (arg0) {
-      console.log(`dangling then and probably an undefined: ${arg0}`);
+      console.log("\ndangling then (previous then does not return anything)");
+      console.log({ arg0 });
     })
     .catch(function (error) {
       console.log("NUMBER 0");
@@ -49,5 +56,5 @@ function loadSite(site: string) {
 
 console.log("NUMBER 0");
 loadSite("http://google.com");
-// loadSite('doesnotexist.com')
+// loadSite("doesnotexist.com");
 console.log("NUMBER 0");

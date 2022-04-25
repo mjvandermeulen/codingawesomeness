@@ -1,4 +1,4 @@
-import { callbacksPretendLoad } from "./library.js";
+import { callbacksPretendLoad } from "./promises.js";
 
 console.log("NUMBER 1");
 

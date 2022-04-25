@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "strict": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "target": "es6",
-    "outDir": "built"
+    "outDir": "build"
   },
   "include": ["./src/**/*"]
 }

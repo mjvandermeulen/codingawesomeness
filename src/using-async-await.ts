@@ -20,7 +20,7 @@
  *
  */
 
-import { promisePretendLoad } from "./library.js";
+import { promisePretendLoad } from "./promises";
 
 const loadSite = async (site: string) => {
   // ****** KINDA LEFT OFF HERE:
@@ -29,6 +29,7 @@ const loadSite = async (site: string) => {
   let status = "";
   console.log("NUMBER 3");
   try {
+    //******* add result = await ....
     await promisePretendLoad(site); // NOTICE the crucial "await"
     console.log(`${site} loaded`);
     console.log("NUBMER 5a");
