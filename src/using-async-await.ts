@@ -20,42 +20,47 @@
  *
  */
 
-import { promisePretendLoad } from "./promises";
+import { promisePretendLanguageCheck, promisePretendLoad } from "./promises";
 
 const loadSite = async (site: string) => {
   // ****** KINDA LEFT OFF HERE:
   // This is informative, but not practical:
   // usually you would return the content OR an error, not the status
   let status = "";
-  console.log("NUMBER 3");
+  console.log("NUMBER 0");
   try {
     //******* add result = await ....
-    await promisePretendLoad(site); // NOTICE the crucial "await"
-    console.log(`${site} loaded`);
-    console.log("NUBMER 5a");
+    const result = await promisePretendLoad(site); // NOTICE the crucial "await"
+    console.log(`${site} loaded asynchronously:\n  ${result}`);
+    console.log("NUMBER 0");
+    const [cleanedText, changes] = await promisePretendLanguageCheck(result);
+    console.log({ value: cleanedText });
+    console.log({ changes });
+    console.log("NUMBER 0");
     status += `${site} success`;
   } catch (error) {
-    console.log("NUMBER 5b");
+    console.log("NUMBER 0");
     console.log(`An error occured loading site ${site}`);
     status += `${site} error loading site`;
   } finally {
-    console.log("NUMBER 6");
+    console.log("NUMBER 0");
     status += `\n${site} and more processing in finally`;
   }
-  console.log("NUMBER 7");
+  console.log("NUMBER 0");
   status += `\n${site} and some wrapping up at end of loadSite`;
   return status;
 };
 
 const main = async () => {
-  console.log("NUMBER 2");
+  console.log("NUMBER 0");
+  // TODO: use Promise.all, to load sites concurrently
   let status = await loadSite("http://google.com");
   status += "\n";
   status += await loadSite("doesnotexist.com");
-  console.log("NUMBER 8");
+  console.log("NUMBER 0");
   console.log(`Status:\n${status}`);
 };
 
-console.log("NUMBER 1");
+console.log("NUMBER 0");
 main();
-console.log("NUMBER 4");
+console.log("NUMBER 0");

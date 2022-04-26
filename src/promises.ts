@@ -1,26 +1,26 @@
 import { cleanedUpWords, randomWords } from "./words-tools";
 
-export const promisePretendLoad = (site: string) => {
+export const promisePretendLoad = (site: string): Promise<string> => {
   // pretends to load a site. Clever!
   // returns a promise
   return new Promise((resolve, reject) => {
-    console.log("Promise A");
+    console.log("Promise 0");
     setTimeout(() => {
-      console.log("Promise B");
+      console.log("Promise 0");
       if (site != "doesnotexist.com") {
-        console.log("Promise C");
+        console.log("Promise 0");
         resolve(`${site} here, I just want to say ${randomWords(10, 0.7)}`);
-        console.log("Promise C1");
+        console.log("Promise 0");
       } else {
-        console.log("Promise D");
+        console.log("Promise 0");
         reject("What a pitty");
-        console.log("Promise D1");
+        console.log("Promise 0");
       }
       // reject("Bonus reject 1");
       // resolve("Bonus resolve 1");
-      console.log("Promise B1");
+      console.log("Promise 0");
     }, 500);
-    console.log("Promise A1");
+    console.log("Promise 0");
     // reject("Bonus reject 2");
     // resolve("Bonus resolve 2");
   });
@@ -29,6 +29,7 @@ export const promisePretendLoad = (site: string) => {
 export const promisePretendLanguageCheck = (
   text: string
 ): Promise<[string, number]> => {
+  // only the resolve Promise return type is specified above!
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() < 0.1) {

@@ -11,3 +11,8 @@ terminal 2:
 `watch node ./build/using-promises`
 
 watch needs to be installed (brewed)
+
+# TODO
+
+- add github clone instructions
+- add nodemon
