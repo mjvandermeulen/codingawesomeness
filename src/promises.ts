@@ -4,25 +4,40 @@ export const promisePretendLoad = (site: string): Promise<string> => {
   // pretends to load a site. Clever!
   // returns a promise
   return new Promise((resolve, reject) => {
-    console.log("Promise 0");
+    console.log("Number 0");
     setTimeout(() => {
-      console.log("Promise 0");
+      console.log("Number 0");
       if (site != "doesnotexist.com") {
-        console.log("Promise 0");
-        resolve(`${site} here, I just want to say ${randomWords(10, 0.7)}`);
-        console.log("Promise 0");
+        console.log("Number 0");
+        resolve(`Site ${site} provided this content.`);
+        console.log("Number 0");
       } else {
-        console.log("Promise 0");
-        reject("What a pitty");
-        console.log("Promise 0");
+        console.log("Number 0");
+        reject("Unknown error. Sorry.");
+        console.log("Number 0");
       }
       // reject("Bonus reject 1");
       // resolve("Bonus resolve 1");
-      console.log("Promise 0");
+      console.log("Number 0");
     }, 500);
-    console.log("Promise 0");
+    console.log("Number 0");
     // reject("Bonus reject 2");
     // resolve("Bonus resolve 2");
+  });
+};
+
+export const promiseRandomLoad = (site: string): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    console.log("Promise 0");
+    setTimeout(() => {
+      if (site != "doesnotexist.com") {
+        resolve(
+          `Site ${site} provided these random words: ${randomWords(10, 0.7)}`
+        );
+      } else {
+        reject("Unknown error loading random words");
+      }
+    }, 500);
   });
 };
 
@@ -34,9 +49,9 @@ export const promisePretendLanguageCheck = (
     setTimeout(() => {
       if (Math.random() < 0.1) {
         reject("Something randomly went wrong");
+      } else {
+        resolve(cleanedUpWords(text));
       }
-      // else needed? *******
-      resolve(cleanedUpWords(text));
     }, 500);
   });
 };

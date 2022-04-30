@@ -20,32 +20,14 @@
  *
  */
 
-import { promisePretendLanguageCheck, promisePretendLoad } from "./promises";
+import { promisePretendLoad } from "./promises";
 
 function loadSite(site: string) {
   console.log("NUMBER 0");
   promisePretendLoad(site)
     .then(function (result) {
       console.log("NUMBER 0");
-      return `${site} loaded with\n  "${result}"`;
-    })
-    .then(function (result) {
-      console.log(result);
-      return result;
-    })
-    .then(function (result) {
-      return promisePretendLanguageCheck(result);
-    })
-    .then(function (result: [string, number]) {
-      const [text, changes] = result;
-      return `${site} cleaned load result\n  ${text}\n  ${changes} bad word${changes > 1 ? "s were" : " was"} found`;
-    })
-    .then(function (result) {
-      console.log(result);
-    })
-    .then(function (arg0) {
-      console.log("\ndangling then (previous then does not return anything)");
-      console.log({ arg0 });
+      console.log(`${site} loaded with\n  "${result}"`);
     })
     .catch(function (error) {
       console.log("NUMBER 0");
@@ -55,6 +37,6 @@ function loadSite(site: string) {
 }
 
 console.log("NUMBER 0");
-loadSite("http://google.com");
-// loadSite("doesnotexist.com");
+// loadSite("http://google.com");
+loadSite("doesnotexist.com");
 console.log("NUMBER 0");
