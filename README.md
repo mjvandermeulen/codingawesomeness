@@ -1,4 +1,4 @@
-# How to use the instant tinkering scratchpad:
+# How to use the instant tinkering scratchpad or scrathpad2:
 
 see `package.json` `scripts`
 ```bash
@@ -7,6 +7,12 @@ codingawesomeness $
     npm run pad
     # OR
     npm run pad2
+```
+
+# How to instant tinker with any file:
+
+```bash
+codingawesomeness/src/tinkering $ npx nodemon new_tinker_file.ts
 ```
 
 # history:
