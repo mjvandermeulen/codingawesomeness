@@ -1,4 +1,4 @@
-import { cleanedUpWords, randomWords } from "./words-tools";
+import { cleanedUpWords, randomWords } from "../tools/words-tools";
 
 export const promisePretendLoad = (site: string): Promise<string> => {
   // pretends to load a site. Clever!

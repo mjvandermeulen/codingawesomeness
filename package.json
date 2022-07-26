@@ -4,6 +4,8 @@
   "description": "Coding School of Awesomeness Playground",
   "main": "index.js",
   "scripts": {
+    "pad": "nodemon ./src/tinkering/scratchpad.ts",
+    "pad2": "nodemon ./src/tinkering/scratchpad2.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,7 +24,9 @@
   },
   "homepage": "https://github.com/mjvandermeulen/codingawesomeness#readme",
   "dependencies": {
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "reflect-metadata": "^0.1.13",
+    "typedi": "^0.10.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.26",
@@ -32,6 +36,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
     "typescript": "^4.6.3"
   }
 }

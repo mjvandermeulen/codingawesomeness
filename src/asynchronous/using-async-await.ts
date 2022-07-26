@@ -4,6 +4,7 @@
  * - $ git clone git@github.com:mjvandermeulen/codingawesomeness.git
  * - $ npm install
  * - $ node using-promises.js
+ * - $ OR 
  *
  * EXERCISE 1:
  *

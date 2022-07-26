@@ -1,4 +1,4 @@
-import { badList, loremList } from "./words-config";
+import { badList, loremList } from "../config/words-config";
 
 const randomWord = (list: string[]) => {
   return list[Math.floor(Math.random() * list.length)];
