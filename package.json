@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/mjvandermeulen/codingawesomeness#readme",
   "dependencies": {
+    "contentful": "^9.1.34",
+    "contentful-management": "^10.12.0",
     "node-fetch": "^2.6.7",
     "reflect-metadata": "^0.1.13",
     "typedi": "^0.10.0"
