@@ -59,3 +59,7 @@ serviceInstance.injectedService.printMessage();
 
 console.log(serviceInstance.myInjectedService.double(3));
 serviceInstance.normalService.sayIt();
+
+
+const maths = Container.get(Maths);
+console.log(maths.double(4))
