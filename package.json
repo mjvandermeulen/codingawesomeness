@@ -1,7 +1,7 @@
 {
   "name": "codingawesomeness",
   "version": "1.0.0",
-  "description": "Coding School of Awesomeness Playground",
+  "description": "Maarten's Coding School of Awesomeness Playground",
   "main": "index.js",
   "scripts": {
     "pad": "nodemon ./src/tinkering/scratchpad.ts",
@@ -24,11 +24,16 @@
   },
   "homepage": "https://github.com/mjvandermeulen/codingawesomeness#readme",
   "dependencies": {
+    "@sindresorhus/slugify": "^2.1.0",
     "contentful": "^9.1.34",
     "contentful-management": "^10.12.0",
     "node-fetch": "^2.6.7",
     "reflect-metadata": "^0.1.13",
-    "typedi": "^0.10.0"
+    "rehype-stringify": "^9.0.3",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "typedi": "^0.10.0",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.26",

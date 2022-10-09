@@ -1,17 +1,13 @@
 {
     "compilerOptions": {
         // "strict": true,
-        "downlevelIteration": true, // for [...new Set(a)]
-        // "target": "ES2015", // for [...new Set(a)]
-        "skipLibCheck": true,
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "outDir": "build",
         // type-graphql
         "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        // "moduleResolution": "node"
+        "experimentalDecorators": true
     },
     "exclude": ["node_modules/**/*"],
     "include": ["src/**/*"]
