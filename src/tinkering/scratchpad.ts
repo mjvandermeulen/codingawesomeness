@@ -1,20 +1,35 @@
-// const highlight = require('fuzzysearch-highlight')
-// const fuzzysearch = require('fuzzysearch')
+const printFolds = (folds: boolean[]): void => {
+    let foldsString: string = ""
+    for (const fold of folds) {
+        foldsString = `${foldsString} ${fold ? "M" : "V"}`
+    }
+    console.log(`folds (length = ${folds.length})`)
+    console.log(foldsString)
+}
 
-// export const scratchpadBogus = 0; // turn this into a module
+const pureRecursion = (n: number, fold: boolean = false): boolean[] => {
+    if (n <= 0) return []
+    return [...pureRecursion(n - 1, false), fold, ...pureRecursion(n - 1, true)]
+}
 
-// const history = [];
-// for (let search = 0; search < 10; search++) {
-//     history.unshift(search);
-//     if (history.length > 3) history.pop();
-//     console.log({ history });
-// }
+const singleRecursion = (n: number): boolean[] => {
+    if (n <= 0) return []
+    const prev = singleRecursion(n - 1)
+    const negRev = [...prev].reverse().map(fold => !fold)
+    return [...prev, false, ...negRev]
+}
 
-const arrayToCut = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const iterative = (n: number): boolean[] => {
+    let folds: boolean[] = []
+    for (let i = 0; i < n; i++) {
+        const negRev = [...folds].reverse().map(fold => !fold)
+        folds = [...folds, false, ...negRev]
+    }
+    return folds
+}
 
-const n = 5; //get the first 5 items
-
-const newArray = arrayToCut.slice(0, n);
-
-console.log({ arrayToCut });
-console.log({ newArray });
+for (let i = 0; i < 5; i++) {
+    printFolds(pureRecursion(i))
+    printFolds(singleRecursion(i))
+    printFolds(iterative(i))
+}
